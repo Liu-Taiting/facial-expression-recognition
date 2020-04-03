@@ -3,13 +3,13 @@
 @author: liutaiting
 @lastEditors: liutaiting
 @Date: 2020-04-03 10:59:58
-@LastEditTime: 2020-04-03 12:05:14
+@LastEditTime: 2020-04-03 13:33:55
 '''
 from matplotlib import pyplot as plt
 from config import EPOCHS
 import tensorflow as tf
 
-def plot_loss(history, title = 'Title',save = False,savename = ''):
+def plot_loss(history, title = 'Title',save_image = False,save_name = ''):
     train_loss=history.history['loss']
     val_loss=history.history['val_loss']
 
@@ -21,10 +21,10 @@ def plot_loss(history, title = 'Title',save = False,savename = ''):
     plt.xlabel('epoch')
     plt.ylabel('loss')
     plt.legend()
-    if save:
-        plt.savefig("%s.png"%savename,dpi = 300)
+    if save_image:
+        plt.savefig("%s.png"%save_name,dpi = 300)
 
-def plot_acc(history, title = 'Title',save = False,savename = ''):
+def plot_acc(history, title = 'Title',save_image = False,save_name = ''):
     train_loss=history.history['accuracy']
     val_loss=history.history['val_accuracy']
 
@@ -36,5 +36,5 @@ def plot_acc(history, title = 'Title',save = False,savename = ''):
     plt.xlabel('epoch')
     plt.ylabel('loss')
     plt.legend()
-    if save:
-        plt.savefig("%s.png"%savename,dpi = 300)
+    if save_image:
+        plt.savefig("%s.png"%save_name,dpi = 300)

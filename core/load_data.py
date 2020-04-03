@@ -3,7 +3,7 @@
 @author: liutaiting
 @lastEditors: liutaiting
 @Date: 2020-04-03 10:01:59
-@LastEditTime: 2020-04-03 10:37:58
+@LastEditTime: 2020-04-03 12:57:07
 '''
 
 import pandas as pd
@@ -66,4 +66,4 @@ def fer2013_load_data():
     val_flow = testgen.flow(X_val, y_val, batch_size=BATCH_SIZE) 
     test_flow = testgen.flow(X_test, y_test, batch_size=BATCH_SIZE) 
     
-    return train_flow, val_flow, num_train, num_val
+    return train_flow, val_flow, X_test, y_test, num_train, num_val

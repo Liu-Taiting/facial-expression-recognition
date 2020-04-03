@@ -3,25 +3,27 @@
 @author: liutaiting
 @lastEditors: liutaiting
 @Date: 2020-04-03 10:55:15
-@LastEditTime: 2020-04-03 10:58:13
+@LastEditTime: 2020-04-03 13:32:46
 '''
 import numpy as np
 import itertools
 from matplotlib import pyplot as plt
 from sklearn.metrics import confusion_matrix
 
-def plot_confusion_matrix(y_test, y_pred, classes,
+def plot_confusion_matrix(labels, y_pred, classes,
                           normalize=False,
-                          title='Unnormalized confusion matrix',
+                          title='Confusion Matrix',
                           cmap=plt.cm.Blues,
+                          save_image = False,
                           save_name = 'Confusion_matrix'):
-    cm = confusion_matrix(y_test, y_pred)
+    cm = confusion_matrix(labels, y_pred)
     
     if normalize:
         cm = np.round(cm.astype('float') / cm.sum(axis=1)[:, np.newaxis], 2)
         
     np.set_printoptions(precision=2)
-        
+    
+    plt.figure()
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
@@ -38,5 +40,5 @@ def plot_confusion_matrix(y_test, y_pred, classes,
     plt.tight_layout()
     plt.ylabel('True expression')
     plt.xlabel('Predicted expression')
-    plt.savefig("%s.png"%save_name,dpi = 300)
-    plt.show()
+    if save_image:
+        plt.savefig("%s.png"%save_name,dpi = 300)
