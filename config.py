@@ -3,10 +3,10 @@
 @author: liutaiting
 @lastEditors: liutaiting
 @Date: 2020-04-01 23:49:35
-@LastEditTime: 2020-04-03 10:36:36
+@LastEditTime: 2020-04-03 11:01:46
 '''
 
-EPOCHS = 50
+EPOCHS = 5
 BATCH_SIZE = 128
 NUM_CLASSES = 7
 image_width = 48
