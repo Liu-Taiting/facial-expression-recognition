@@ -3,11 +3,11 @@
 @author: liutaiting
 @lastEditors: liutaiting
 @Date: 2020-04-01 23:49:35
-@LastEditTime: 2020-04-03 11:01:46
+@LastEditTime: 2020-04-04 23:41:21
 '''
 
 EPOCHS = 5
-BATCH_SIZE = 128
+BATCH_SIZE = 32
 NUM_CLASSES = 7
 image_width = 48
 image_height = 48
